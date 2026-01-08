@@ -1,7 +1,7 @@
 # Korber Inventory Service
 
 ## Overview
-The **Inventory Service** manages product stock levels and provides APIs to retrieve and update inventory. 
+The **Inventory Service** manages product stock levels and provides APIs to retrieve and update inventory.  
 It integrates with an in-memory **H2 database** and uses **Liquibase** for schema management and initial data loading.
 
 ---
@@ -30,19 +30,19 @@ H2 console: http://localhost:8081/h2-console (JDBC URL: jdbc:h2:mem:inventorydb)
 
 ## API Endpoints
 
-Get Inventory
-GET /inventory/{productId}
+Get Inventory  
+GET /inventory/{productId}  
 Returns all batches for a product.
 
-Update Inventory
-POST /inventory/update
-Request body:
-{
-  "productId": 101,
-  "quantity": 5
+Update Inventory  
+POST /inventory/update  
+Request body:  
+{  
+  "productId": 101,  
+  "quantity": 5  
 }
 
-Database & Liquibase
+Database & Liquibase  
 Schema & initial CSV data (inventory.csv) are managed via Liquibase (db/changelog/db.changelog-master-inventory.xml).
 
 H2 in-memory database used for development & testing.
@@ -53,10 +53,10 @@ Unit tests: InventoryServiceTest using JUnit 5 + Mockito
 
 Integration tests: @SpringBootTest with H2
 
-Run all tests:
+Run all tests:  
 ./mvnw test
 
-Notes
+Notes  
 Designed to work with Order Service in a microservices architecture.
 
 CRUD operations and stock updates can be tested via Postman.

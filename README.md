@@ -17,11 +17,11 @@ It integrates with an in-memory **H2 database** and uses **Liquibase** for schem
 
 ## Setup
 
-Clone the repository:
-git clone https://github.com/sandeepkrjsr/korber-inventory.git
-cd korber-inventory
-Build & run:
-./mvnw clean install
+Clone the repository:  
+git clone https://github.com/sandeepkrjsr/korber-inventory.git  
+cd korber-inventory  
+Build & run:  
+./mvnw clean install  
 ./mvnw spring-boot:run
 
 Service runs on http://localhost:8081

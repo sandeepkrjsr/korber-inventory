@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.korber.inventory.dto.BatchResponse;
+import com.korber.inventory.dto.InventoryReserveResponse;
 import com.korber.inventory.dto.InventoryResponse;
 import com.korber.inventory.entity.InventoryBatch;
 import com.korber.inventory.factory.InventoryHandlerFactory;
@@ -39,8 +40,8 @@ public class InventoryService {
         return response;
     }
 
-    public void updateStock(Long productId, int quantity) {
-        factory.getHandler().updateStock(productId, quantity);
+    public InventoryReserveResponse updateStock(Long productId, int quantity) {
+    	return factory.getHandler().updateStock(productId, quantity);
     }
     
 }

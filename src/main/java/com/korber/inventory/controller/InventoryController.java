@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.korber.inventory.dto.InventoryReserveResponse;
 import com.korber.inventory.dto.InventoryResponse;
 import com.korber.inventory.dto.InventoryUpdateRequest;
 import com.korber.inventory.service.InventoryService;
@@ -28,8 +29,8 @@ public class InventoryController {
     }
 
     @PostMapping("/update")
-    public void updateStock(@RequestBody InventoryUpdateRequest request) {
-        service.updateStock(request.getProductId(), request.getQuantity());
+    public InventoryReserveResponse updateStock(@RequestBody InventoryUpdateRequest request) {
+        return service.updateStock(request.getProductId(), request.getQuantity());
     }
 
 }

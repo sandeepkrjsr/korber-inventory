@@ -6,6 +6,7 @@ import static org.mockito.Mockito.*;
 
 import java.util.List;
 
+import com.korber.inventory.dto.InventoryResponse;
 import com.korber.inventory.entity.InventoryBatch;
 import com.korber.inventory.factory.InventoryHandler;
 import com.korber.inventory.factory.InventoryHandlerFactory;
@@ -47,9 +48,9 @@ class InventoryServiceTest {
         // Mock handler method
         when(handler.getBatches(productId)).thenReturn(mockBatches);
 
-        List<InventoryBatch> result = inventoryService.getBatches(productId);
+        InventoryResponse result = inventoryService.getBatches(productId);
 
-        assertEquals(2, result.size());
+        assertEquals(2, result.getBatches().size());
         verify(factory, times(1)).getHandler();
         verify(handler, times(1)).getBatches(productId);
     }
